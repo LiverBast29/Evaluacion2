@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { AuthService } from './../servicio/auth/auth.service';
+import { AuthService } from './../servicios/auth.service';
+
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -22,7 +23,7 @@ export class IniciarSesionPage implements OnInit {
       password: ['emmajpass',
                   [ Validators.required,
                     Validators.minLength(3),
-                    Validators.maxLength(10)
+                    Validators.maxLength(12)
                 ] ]
     });
   }

@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>iniciarSesion</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,17 +11,19 @@
     </ion-toolbar>
   </ion-header>
   <form [formGroup]="formularioInicioSesion" (ngSubmit)="iniciarSesion()">
-  <ion-icon name="person-circle-outline" style="font-size: 300px; display: flex;"></ion-icon>
+    <ion-icon name="person-circle-outline" style="font-size: 300px; display: block; margin: 0 auto;"></ion-icon>
+  <ion-text color="dark" class="ion-text-center">
+    <h2>Bienvenido</h2>
+  </ion-text>
   <ion-item>
-    <ion-label>Ingresa tu usuario</ion-label>
-    <ion-input type="text" formControlName="usuario"></ion-input>
+    <ion-input label="Ingresa su usuario: " labelplacement="floating" fill="outline" type="text" formControlName="usuario"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Ingresa tu password</ion-label>
-    <ion-input type="text" formControlName="password"></ion-input>
+    <ion-input label="Inrese su contraseña: "labelplacement="floating" fill="outline" type="password" formControlName="password"></ion-input>
   </ion-item>
-  <ion-button type="submit">Iniciar Sesion</ion-button>
+  <ion-button type="submit" expand="block" style="margin: 20px auto;">Iniciar Sesion</ion-button>
   </form>
   <ion-spinner *ngIf="auth.$cargando | async" name="bubbles"></ion-spinner>
+
 
 </ion-content>
